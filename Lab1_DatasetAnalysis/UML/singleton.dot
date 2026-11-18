@@ -1,0 +1,13 @@
+digraph Singleton {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.7", fontname="Arial", labelloc=t, label="Паттерн Singleton — общие настройки анализа", fontsize=18];
+ node [shape=record, style="rounded,filled", fillcolor="#EAF2FF", color="#3A6598", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+ edge [fontname="Arial", fontsize=9, color="#53657A", arrowsize=0.8];
+ Settings [label="{AnalysisSettings| - Holder: Lazy<AnalysisSettings>\l - MaxRows: 20000\l - MaxColumns: 100\l - DefaultEncoding: UTF-8\l|+ Instance: AnalysisSettings\l}", fillcolor="#DCEBFF"];
+ Builder [label="{AnalysisRequestBuilder|+ FromFile()\l + WithNumericFilter()\l + Build()\l}"];
+ Client [label="{Program|+ Main()\l}", fillcolor="#F2F4F7"];
+ Director [label="{AnalysisRequestDirector|+ CreateFullAnalysis()\l + CreateRevenuePreview()\l}"];
+ Client -> Settings [label="получает Instance"];
+
+ Client -> Director [label="запускает сценарий"];
+ Director -> Builder [label="настраивает"];
+}

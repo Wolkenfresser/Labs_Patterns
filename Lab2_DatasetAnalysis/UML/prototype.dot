@@ -1,0 +1,12 @@
+digraph Prototype {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.5", ranksep="0.7", fontname="Arial", labelloc=t, label="Паттерн Prototype — клонирование профилей анализа", fontsize=18];
+ node [shape=record, style="rounded,filled", fillcolor="#FFF4DF", color="#A8792D", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+ edge [fontname="Arial", fontsize=9, color="#53657A", arrowsize=0.8];
+ Registry [label="{AnalysisProfileRegistry| - prototypes: Dictionary\l|+ Register(key, prototype)\l + Create(key)\l}", fillcolor="#FFE8BE"];
+ Profile [label="{AnalysisProfile|+ Name\l + SelectedColumns: List<string>\l + Filter: NumericFilter?\l|+ Clone()\l}"];
+ Client [label="{Program|+ Main()\l}", fillcolor="#F2F4F7"];
+ Filter [label="{NumericFilter|+ ColumnName\l + Minimum\l + Maximum\l}"];
+ Client -> Registry [label="запрашивает копию"];
+ Registry -> Profile [label="хранит прототип и клонирует"];
+ Profile -> Filter [label="содержит фильтр"];
+}

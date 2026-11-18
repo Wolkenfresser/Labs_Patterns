@@ -1,0 +1,9 @@
+КОНТРОЛЬНЫЙ ПРИМЕР РЕЗУЛЬТАТА (ожидаемые значения)
+[Abstract Factory: CSV]
+Фабрика создала совместимые продукты: 10 строк
+[Abstract Factory: JSON]
+Загружено: 10 строк; заполненность=96.67%
+[Prototype]
+Исходный профиль: region, product, revenue
+Копия профиля: region, product, revenue, discount
+Списки независимы: True

@@ -1,0 +1,22 @@
+digraph AbstractFactory {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.7", fontname="Arial", labelloc=t, label="Паттерн Abstract Factory — семейства средств обработки форматов", fontsize=18];
+ node [shape=record, style="rounded,filled", fillcolor="#FFF4DF", color="#A8792D", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+ edge [fontname="Arial", fontsize=9, color="#53657A", arrowsize=0.8];
+ AF [label="{IAnalysisToolkitFactory|+ CreateLoader()\l + CreateExporter()\l}", fillcolor="#FFE8BE"];
+ CSV [label="{CsvToolkitFactory|+ CreateLoader()\l + CreateExporter()\l}"];
+ JSON [label="{JsonToolkitFactory|+ CreateLoader()\l + CreateExporter()\l}"];
+ IL [label="{IDataSetLoader|+ Load(path)}"];
+ IE [label="{IAnalysisExporter|+ Export(report)}"];
+ CL [label="{CsvLoader}"];
+ CE [label="{CsvAnalysisExporter}"];
+ JL [label="{JsonLoader}"];
+ JE [label="{JsonAnalysisExporter}"];
+ AF -> CSV [arrowhead=empty, label="реализует"];
+ AF -> JSON [arrowhead=empty, label="реализует"];
+ CSV -> CL [label="создаёт"];
+ CSV -> CE [label="создаёт"];
+ JSON -> JL [label="создаёт"];
+ JSON -> JE [label="создаёт"];
+ IL -> CL [arrowhead=empty]; IL -> JL [arrowhead=empty];
+ IE -> CE [arrowhead=empty]; IE -> JE [arrowhead=empty];
+}

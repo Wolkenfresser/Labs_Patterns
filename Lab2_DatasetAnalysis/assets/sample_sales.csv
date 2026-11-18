@@ -1,0 +1,11 @@
+id,region,product,units,revenue,discount
+1001,North,Keyboard,3,85000,0.05
+1002,South,Mouse,5,24000,0.10
+1003,West,Monitor,2,56000,
+1004,East,Laptop,1,90000,0.00
+1005,North,Mouse,4,26000,0.15
+1006,West,Keyboard,2,42000,0.05
+1007,East,Monitor,1,68000,0.00
+1008,South,Laptop,1,125000,0.00
+1009,North,Webcam,3,24500,0.08
+1010,West,Mouse,6,18000,

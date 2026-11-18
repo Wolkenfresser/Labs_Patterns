@@ -1,0 +1,16 @@
+digraph Adapter {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.5", ranksep="0.7", fontname="Arial", labelloc=t, label="Паттерн Adapter — подключение legacy-источника таблиц", fontsize=18];
+ node [shape=record, style="rounded,filled", fillcolor="#F1EAFE", color="#7658A6", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+ edge [fontname="Arial", fontsize=9, color="#53657A", arrowsize=0.8];
+ Target [label="{IDatasetSource|+ Load(): TabularDataset}", fillcolor="#E4D9FA"];
+ Adapter [label="{LegacyDatasetAdapter| - legacy: ILegacyTableProvider\l|+ Load(): TabularDataset}", fillcolor="#E4D9FA"];
+ Adaptee [label="{ILegacyTableProvider|+ GetRows(): string[][]}"];
+ Concrete [label="{LegacySalesTableProvider|+ GetRows()}"];
+ Model [label="{TabularDataset|+ Name\l + Columns\l + Rows\l}", fillcolor="#E8F5EC"];
+ Client [label="{Program|+ Main()}", fillcolor="#F2F4F7"];
+ Target -> Adapter [arrowhead=empty, label="реализует"];
+ Adapter -> Adaptee [label="использует старый интерфейс"];
+ Adaptee -> Concrete [arrowhead=empty];
+ Adapter -> Model [label="преобразует"];
+ Client -> Target [label="работает через"];
+}

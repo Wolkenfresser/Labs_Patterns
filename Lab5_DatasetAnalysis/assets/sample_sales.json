@@ -1,0 +1,12 @@
+[
+  {"id":1001,"region":"North","product":"Keyboard","units":3,"revenue":85000,"discount":0.05},
+  {"id":1002,"region":"South","product":"Mouse","units":5,"revenue":24000,"discount":0.10},
+  {"id":1003,"region":"West","product":"Monitor","units":2,"revenue":56000,"discount":null},
+  {"id":1004,"region":"East","product":"Laptop","units":1,"revenue":90000,"discount":0.00},
+  {"id":1005,"region":"North","product":"Mouse","units":4,"revenue":26000,"discount":0.15},
+  {"id":1006,"region":"West","product":"Keyboard","units":2,"revenue":42000,"discount":0.05},
+  {"id":1007,"region":"East","product":"Monitor","units":1,"revenue":68000,"discount":0.00},
+  {"id":1008,"region":"South","product":"Laptop","units":1,"revenue":125000,"discount":0.00},
+  {"id":1009,"region":"North","product":"Webcam","units":3,"revenue":24500,"discount":0.08},
+  {"id":1010,"region":"West","product":"Mouse","units":6,"revenue":18000,"discount":null}
+]

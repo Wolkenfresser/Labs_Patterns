@@ -1,0 +1,14 @@
+digraph Bridge {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.5", ranksep="0.7", fontname="Arial", labelloc=t, label="Паттерн Bridge — разделение вида отчёта и формата вывода", fontsize=18];
+ node [shape=record, style="rounded,filled", fillcolor="#F1EAFE", color="#7658A6", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+ edge [fontname="Arial", fontsize=9, color="#53657A", arrowsize=0.8];
+ View [label="{AnalysisReportView| - Renderer: IReportRenderer\l|+ Show(report)}", fillcolor="#E4D9FA"];
+ Summary [label="{SummaryReportView|+ Detailed = false}"];
+ Detailed [label="{DetailedReportView|+ Detailed = true}"];
+ Renderer [label="{IReportRenderer|+ Render(report, detailed)}", fillcolor="#E4D9FA"];
+ Plain [label="{PlainTextReportRenderer|+ Render()}"];
+ Markdown [label="{MarkdownReportRenderer|+ Render()}"];
+ View -> Summary [arrowhead=empty]; View -> Detailed [arrowhead=empty];
+ View -> Renderer [label="содержит реализацию"];
+ Renderer -> Plain [arrowhead=empty]; Renderer -> Markdown [arrowhead=empty];
+}

@@ -1,0 +1,12 @@
+digraph Composite {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.5", ranksep="0.7", fontname="Arial", labelloc=t, label="Паттерн Composite — дерево компонентов наборов данных", fontsize=18];
+ node [shape=record, style="rounded,filled", fillcolor="#E7F5F4", color="#3A827C", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+ edge [fontname="Arial", fontsize=9, color="#53657A", arrowsize=0.8];
+ Component [label="{IDatasetComponent|+ Name\l + GetDataset()}", fillcolor="#D5EFED"];
+ Leaf [label="{DatasetLeaf| - dataset\l|+ GetDataset()}"];
+ Group [label="{DatasetGroup| - children: List<IDatasetComponent>\l|+ Add()\l + Remove()\l + GetDataset()}", fillcolor="#D5EFED"];
+ Core [label="{TabularDataset.Merge()|Объединение строк при совпадающей структуре}"];
+ Component -> Leaf [arrowhead=empty]; Component -> Group [arrowhead=empty];
+ Group -> Component [label="содержит 0..*", arrowhead=diamond];
+ Group -> Core [label="агрегирует"];
+}
